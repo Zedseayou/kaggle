@@ -1,0 +1,32 @@
+---
+title: "Titanic"
+author: "Calum You"
+date: "24th January, 2018"
+output:
+  html_notebook:
+    highlight: tango
+    mathjax: null
+    number_sections: yes
+    theme: spacelab
+    toc: yes
+    toc_float: yes
+---
+
+# Setup
+```{r setup}
+library(tidyverse)
+library(magrittr)
+```
+
+# Input
+```{r input}
+test <- read_csv(here::here("titanic", "data", "test.csv"))
+train <- read_csv(here::here("titanic", "data", "train.csv")) %>%
+  set_colnames(str_to_lower(colnames(.)))
+```
+# Everyone Dies
+```{r alldead}
+test$Survived <- 0
+write_csv(test, here::here("titanic", "submissions", "1_alldead.csv"))
+```
+
