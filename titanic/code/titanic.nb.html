@@ -318,34 +318,13 @@ div.tocify {
 <h1><span class="header-section-number">2</span> Input</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdCA8LSByZWFkX2NzdihoZXJlOjpoZXJlKFwidGl0YW5pY1wiLCBcImRhdGFcIiwgXCJ0ZXN0LmNzdlwiKSlcbmBgYCJ9 -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdCA8LSByZWFkX2NzdihoZXJlOjpoZXJlKFwidGl0YW5pY1wiLCBcImRhdGFcIiwgXCJ0ZXN0LmNzdlwiKSlcblxuYGBgIn0= -->
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">test &lt;-<span class="st"> </span><span class="kw">read_csv</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;titanic&quot;</span>, <span class="st">&quot;data&quot;</span>, <span class="st">&quot;test.csv&quot;</span>))</code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBQYXNzZW5nZXJJZCA9IGNvbF9pbnRlZ2VyKCksXG4gIFBjbGFzcyA9IGNvbF9pbnRlZ2VyKCksXG4gIE5hbWUgPSBjb2xfY2hhcmFjdGVyKCksXG4gIFNleCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgQWdlID0gY29sX2RvdWJsZSgpLFxuICBTaWJTcCA9IGNvbF9pbnRlZ2VyKCksXG4gIFBhcmNoID0gY29sX2ludGVnZXIoKSxcbiAgVGlja2V0ID0gY29sX2NoYXJhY3RlcigpLFxuICBGYXJlID0gY29sX2RvdWJsZSgpLFxuICBDYWJpbiA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgRW1iYXJrZWQgPSBjb2xfY2hhcmFjdGVyKClcbilcbiJ9 -->
 <pre><code>Parsed with column specification:
 cols(
   PassengerId = col_integer(),
-  Pclass = col_integer(),
-  Name = col_character(),
-  Sex = col_character(),
-  Age = col_double(),
-  SibSp = col_integer(),
-  Parch = col_integer(),
-  Ticket = col_character(),
-  Fare = col_double(),
-  Cabin = col_character(),
-  Embarked = col_character()
-)</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudHJhaW4gPC0gcmVhZF9jc3YoaGVyZTo6aGVyZShcInRpdGFuaWNcIiwgXCJkYXRhXCIsIFwidHJhaW4uY3N2XCIpKSAlPiVcbiAgc2V0X2NvbG5hbWVzKHN0cl90b19sb3dlcihjb2xuYW1lcyguKSkpXG5gYGAifQ== -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">train &lt;-<span class="st"> </span><span class="kw">read_csv</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;titanic&quot;</span>, <span class="st">&quot;data&quot;</span>, <span class="st">&quot;train.csv&quot;</span>)) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">set_colnames</span>(<span class="kw">str_to_lower</span>(<span class="kw">colnames</span>(.)))</code></pre></div>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBQYXNzZW5nZXJJZCA9IGNvbF9pbnRlZ2VyKCksXG4gIFN1cnZpdmVkID0gY29sX2ludGVnZXIoKSxcbiAgUGNsYXNzID0gY29sX2ludGVnZXIoKSxcbiAgTmFtZSA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgU2V4ID0gY29sX2NoYXJhY3RlcigpLFxuICBBZ2UgPSBjb2xfZG91YmxlKCksXG4gIFNpYlNwID0gY29sX2ludGVnZXIoKSxcbiAgUGFyY2ggPSBjb2xfaW50ZWdlcigpLFxuICBUaWNrZXQgPSBjb2xfY2hhcmFjdGVyKCksXG4gIEZhcmUgPSBjb2xfZG91YmxlKCksXG4gIENhYmluID0gY29sX2NoYXJhY3RlcigpLFxuICBFbWJhcmtlZCA9IGNvbF9jaGFyYWN0ZXIoKVxuKVxuIn0= -->
-<pre><code>Parsed with column specification:
-cols(
-  PassengerId = col_integer(),
-  Survived = col_integer(),
   Pclass = col_integer(),
   Name = col_character(),
   Sex = col_character(),
@@ -365,16 +344,30 @@ cols(
 <h1><span class="header-section-number">3</span> Everyone Dies</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdCRTdXJ2aXZlZCA8LSAwXG53cml0ZV9jc3YodGVzdCwgaGVyZTo6aGVyZShcInRpdGFuaWNcIiwgXCJzdWJtaXNzaW9uc1wiLCBcIjFfYWxsZGVhZFwiKSlcbmBgYCJ9 -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">test<span class="op">$</span>Survived &lt;-<span class="st"> </span><span class="dv">0</span>
-<span class="kw">write_csv</span>(test, here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;titanic&quot;</span>, <span class="st">&quot;submissions&quot;</span>, <span class="st">&quot;1_alldead&quot;</span>))</code></pre></div>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsZGVhZCA8LSB0ZXN0ICU+JVxuICBtdXRhdGUoU3Vydml2ZWQgPSAwKSAlPiVcbiAgc2VsZWN0KFBhc3NlbmdlcklkLCBTdXJ2aXZlZClcbndyaXRlX2NzdihhbGxkZWFkLCBoZXJlOjpoZXJlKFwidGl0YW5pY1wiLCBcInN1Ym1pc3Npb25zXCIsIFwiMV9hbGxkZWFkLmNzdlwiKSlcbmBgYCJ9 -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alldead &lt;-<span class="st"> </span>test <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Survived =</span> <span class="dv">0</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(PassengerId, Survived)
+<span class="kw">write_csv</span>(alldead, here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;titanic&quot;</span>, <span class="st">&quot;submissions&quot;</span>, <span class="st">&quot;1_alldead.csv&quot;</span>))</code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="women-live" class="section level1">
+<h1><span class="header-section-number">4</span> Women Live</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud29tZW5saXZlIDwtIHRlc3QgJT4lXG4gIG11dGF0ZShTdXJ2aXZlZCA9IGlmZWxzZShTZXggPT0gXCJmZW1hbGVcIiwgMSwgMCkpICU+JVxuICBzZWxlY3QoUGFzc2VuZ2VySWQsIFN1cnZpdmVkKVxuYGBgIn0= -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">womenlive &lt;-<span class="st"> </span>test <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Survived =</span> <span class="kw">ifelse</span>(Sex <span class="op">==</span><span class="st"> &quot;female&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">select</span>(PassengerId, Survived)</code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlRpdGFuaWMiDQphdXRob3I6ICJDYWx1bSBZb3UiDQpkYXRlOiAiMjR0aCBKYW51YXJ5LCAyMDE4Ig0Kb3V0cHV0Og0KICBodG1sX25vdGVib29rOg0KICAgIGhpZ2hsaWdodDogdGFuZ28NCiAgICBtYXRoamF4OiBudWxsDQogICAgbnVtYmVyX3NlY3Rpb25zOiB5ZXMNCiAgICB0aGVtZTogc3BhY2VsYWINCiAgICB0b2M6IHllcw0KICAgIHRvY19mbG9hdDogeWVzDQotLS0NCg0KIyBTZXR1cA0KYGBge3Igc2V0dXB9DQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkobWFncml0dHIpDQpgYGANCg0KIyBJbnB1dA0KYGBge3IgaW5wdXR9DQp0ZXN0IDwtIHJlYWRfY3N2KGhlcmU6OmhlcmUoInRpdGFuaWMiLCAiZGF0YSIsICJ0ZXN0LmNzdiIpKQ0KdHJhaW4gPC0gcmVhZF9jc3YoaGVyZTo6aGVyZSgidGl0YW5pYyIsICJkYXRhIiwgInRyYWluLmNzdiIpKSAlPiUNCiAgc2V0X2NvbG5hbWVzKHN0cl90b19sb3dlcihjb2xuYW1lcyguKSkpDQpgYGANCiMgRXZlcnlvbmUgRGllcw0KYGBge3IgYWxsZGVhZH0NCnRlc3QkU3Vydml2ZWQgPC0gMA0Kd3JpdGVfY3N2KHRlc3QsIGhlcmU6OmhlcmUoInRpdGFuaWMiLCAic3VibWlzc2lvbnMiLCAiMV9hbGxkZWFkLmNzdiIpKQ0KYGBgDQoNCg==</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlRpdGFuaWMiDQphdXRob3I6ICJDYWx1bSBZb3UiDQpkYXRlOiAiMjR0aCBKYW51YXJ5LCAyMDE4Ig0Kb3V0cHV0Og0KICBodG1sX25vdGVib29rOg0KICAgIGhpZ2hsaWdodDogdGFuZ28NCiAgICBtYXRoamF4OiBudWxsDQogICAgbnVtYmVyX3NlY3Rpb25zOiB5ZXMNCiAgICB0aGVtZTogc3BhY2VsYWINCiAgICB0b2M6IHllcw0KICAgIHRvY19mbG9hdDogeWVzDQotLS0NCg0KIyBTZXR1cA0KYGBge3Igc2V0dXB9DQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkobWFncml0dHIpDQpgYGANCg0KIyBJbnB1dA0KYGBge3IgaW5wdXR9DQp0ZXN0IDwtIHJlYWRfY3N2KGhlcmU6OmhlcmUoInRpdGFuaWMiLCAiZGF0YSIsICJ0ZXN0LmNzdiIpKQ0KdHJhaW4gPC0gcmVhZF9jc3YoaGVyZTo6aGVyZSgidGl0YW5pYyIsICJkYXRhIiwgInRyYWluLmNzdiIpKSAlPiUNCiAgc2V0X2NvbG5hbWVzKHN0cl90b19sb3dlcihjb2xuYW1lcyguKSkpDQpgYGANCiMgRXZlcnlvbmUgRGllcw0KYGBge3IgYWxsZGVhZH0NCmFsbGRlYWQgPC0gdGVzdCAlPiUNCiAgbXV0YXRlKFN1cnZpdmVkID0gMCkgJT4lDQogIHNlbGVjdChQYXNzZW5nZXJJZCwgU3Vydml2ZWQpDQp3cml0ZV9jc3YoYWxsZGVhZCwgaGVyZTo6aGVyZSgidGl0YW5pYyIsICJzdWJtaXNzaW9ucyIsICIxX2FsbGRlYWQuY3N2IikpDQpgYGANCg0KIyBXb21lbiBMaXZlDQpgYGB7ciB3b21lbmxpdmV9DQp3b21lbmxpdmUgPC0gdGVzdCAlPiUNCiAgbXV0YXRlKFN1cnZpdmVkID0gaWZlbHNlKFNleCA9PSAiZmVtYWxlIiwgMSwgMCkpICU+JQ0KICBzZWxlY3QoUGFzc2VuZ2VySWQsIFN1cnZpdmVkKQ0Kd3JpdGVfY3N2KHdvbWVubGl2ZSwgaGVyZTo6aGVyZSgidGl0YW5pYyIsICJzdWJtaXNzaW9ucyIsICIyX3dvbWVubGl2ZS5jc3YiKSkNCmBgYA0KDQo=</div>
 
 
 </div>

@@ -26,7 +26,17 @@ train <- read_csv(here::here("titanic", "data", "train.csv")) %>%
 ```
 # Everyone Dies
 ```{r alldead}
-test$Survived <- 0
-write_csv(test, here::here("titanic", "submissions", "1_alldead.csv"))
+alldead <- test %>%
+  mutate(Survived = 0) %>%
+  select(PassengerId, Survived)
+write_csv(alldead, here::here("titanic", "submissions", "1_alldead.csv"))
+```
+
+# Women Live
+```{r womenlive}
+womenlive <- test %>%
+  mutate(Survived = ifelse(Sex == "female", 1, 0)) %>%
+  select(PassengerId, Survived)
+write_csv(womenlive, here::here("titanic", "submissions", "2_womenlive.csv"))
 ```
 
