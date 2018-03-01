@@ -17,27 +17,59 @@ output:
 library(tidyverse)
 library(magrittr)
 library(rpart)
+library(broom)
 ```
 
 # Input
 ```{r input}
-test <- read_csv(here::here("titanic", "data", "test.csv"))
+test <- read_csv(here::here("titanic", "data", "test.csv"))%>%
+  set_colnames(str_to_lower(colnames(.))) %>%
+  mutate_if(is.numeric, function(x) ifelse(is.na(x), mean(x, na.rm = TRUE), x))
 train <- read_csv(here::here("titanic", "data", "train.csv")) %>%
-  set_colnames(str_to_lower(colnames(.)))
+  set_colnames(str_to_lower(colnames(.))) %>%
+  mutate_if(is.numeric, function(x) ifelse(is.na(x), mean(x, na.rm = TRUE), x))
 ```
 # Everyone Dies
 ```{r alldead}
 alldead <- test %>%
-  mutate(Survived = 0) %>%
-  select(PassengerId, Survived)
+  mutate(survived = 0) %>%
+  select(passengerid, survived)
 write_csv(alldead, here::here("titanic", "submissions", "1_alldead.csv"))
 ```
 
 # Women Live
 ```{r womenlive}
 womenlive <- test %>%
-  mutate(Survived = ifelse(Sex == "female", 1, 0)) %>%
-  select(PassengerId, Survived)
+  mutate(survived = ifelse(Sex == "female", 1, 0)) %>%
+  select(passengerid, survived)
 write_csv(womenlive, here::here("titanic", "submissions", "2_womenlive.csv"))
+```
+
+# Logistic Regression
+```{r}
+logit <- glm(
+  formula = survived ~ .,
+  family = binomial(link = "logit"),
+  data = train %>% select(-cabin, -passengerid, -name, -ticket)
+  )
+logistic <- mutate(test, survived = ifelse(predict(logit, test) > 0.5, 1, 0))
+write_csv(
+  logistic %>% select(passengerid, survived),
+  here::here("titanic", "submissions", "3_logit.csv")
+  )
+```
+
+# Decision Tree
+```{r}
+dtree <- rpart(
+  formula = survived ~ .,
+  method = "class",
+  data = train %>% select(-cabin, -passengerid, -name, -ticket)
+)
+decision <- mutate(test, survived = predict(dtree, test, type = "class"))
+write_csv(
+  decision %>% select(passengerid, survived),
+  here::here("titanic", "submissions", "4_dtree.csv")
+  )
 ```
 
