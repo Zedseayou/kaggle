@@ -22,16 +22,20 @@ library(broom)
 
 # Input
 ```{r input}
-test <- read_csv(here::here("titanic", "data", "test.csv"))%>%
+test <- read_csv(here::here("titanic", "data", "test.csv"))
+train <- read_csv(here::here("titanic", "data", "train.csv"))
+
+# Combine data into one frame to guarantee the same tranformations
+titanic <- list(train = train, test = test) %>%
+  bind_rows(.id = "type") %>%
   set_colnames(str_to_lower(colnames(.))) %>%
-  mutate_if(is.numeric, function(x) ifelse(is.na(x), mean(x, na.rm = TRUE), x))
-train <- read_csv(here::here("titanic", "data", "train.csv")) %>%
-  set_colnames(str_to_lower(colnames(.))) %>%
-  mutate_if(is.numeric, function(x) ifelse(is.na(x), mean(x, na.rm = TRUE), x))
+  mutate_at(vars(age, fare), ~ ifelse(is.na(.), mean(., na.rm = TRUE), .)) %>%
+  mutate_at(vars(type, sex, pclass, embarked), fac)
 ```
 # Everyone Dies
 ```{r alldead}
-alldead <- test %>%
+alldead <- titanic %>%
+  filter(type == "test") %>%
   mutate(survived = 0) %>%
   select(passengerid, survived)
 write_csv(alldead, here::here("titanic", "submissions", "1_alldead.csv"))
@@ -39,8 +43,9 @@ write_csv(alldead, here::here("titanic", "submissions", "1_alldead.csv"))
 
 # Women Live
 ```{r womenlive}
-womenlive <- test %>%
-  mutate(survived = ifelse(Sex == "female", 1, 0)) %>%
+womenlive <- titanic %>%
+  filter(type == "test") %>%
+  mutate(survived = ifelse(sex == "female", 1, 0)) %>%
   select(passengerid, survived)
 write_csv(womenlive, here::here("titanic", "submissions", "2_womenlive.csv"))
 ```
@@ -48,13 +53,15 @@ write_csv(womenlive, here::here("titanic", "submissions", "2_womenlive.csv"))
 # Logistic Regression
 ```{r}
 logit <- glm(
-  formula = survived ~ .,
+  formula = survived ~ pclass + sex + age + sibsp + parch + fare + embarked,
   family = binomial(link = "logit"),
-  data = train %>% select(-cabin, -passengerid, -name, -ticket)
+  data = titanic %>% filter(type == "train")
   )
-logistic <- mutate(test, survived = ifelse(predict(logit, test) > 0.5, 1, 0))
+logistic <- titanic %>%
+  filter(type == "test") %>%
+  mutate(survived = ifelse(predict(logit, .) > 0.5, 1, 0))
 write_csv(
-  logistic %>% select(passengerid, survived),
+  logistic ,
   here::here("titanic", "submissions", "3_logit.csv")
   )
 ```
@@ -62,14 +69,46 @@ write_csv(
 # Decision Tree
 ```{r}
 dtree <- rpart(
-  formula = survived ~ .,
+  formula = survived ~ pclass + sex + age + sibsp + parch + fare + embarked,
   method = "class",
-  data = train %>% select(-cabin, -passengerid, -name, -ticket)
+  data = titanic %>% filter(type == "train")
 )
-decision <- mutate(test, survived = predict(dtree, test, type = "class"))
+decision <- titanic %>%
+  filter(type == "test") %>%
+  mutate(survived = predict(dtree, ., type = "class"))
 write_csv(
   decision %>% select(passengerid, survived),
   here::here("titanic", "submissions", "4_dtree.csv")
+  )
+```
+
+# Feature Engineering
+```{r}
+titanic <- titanic %>%
+  mutate(
+    title = str_extract(name, "(?<=, )[A-z ]*(?=\\. )"),
+    title = fct_collapse(
+      .f = factor(title),
+      Mrs = c("Mrs", "Mme"),
+      Miss = c("Miss", "Mlle"),
+      Sir = c("Capt", "Col", "Don", "Major", "Sir"),
+      Lady = c("Dona", "Lady", "Jonkheer", "the Countess")
+      ),
+    surname = str_extract(name, "^.*(?=,)"),
+    familysize = sibsp + parch
+    )
+ftree <- rpart(
+  formula = survived ~
+    pclass + sex + age + sibsp + parch + fare + embarked + title + familysize,
+  method = "class",
+  data = titanic %>% filter(type == "train")
+)
+fdecision <- titanic %>%
+  filter(type == "test") %>%
+  mutate(survived = predict(ftree, ., type = "class"))
+write_csv(
+  fdecision %>% select(passengerid, survived),
+  here::here("titanic", "submissions", "5_ftree.csv")
   )
 ```
 

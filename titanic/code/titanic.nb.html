@@ -307,36 +307,11 @@ div.tocify {
 <h1><span class="header-section-number">1</span> Setup</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5gYGAifQ== -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)</code></pre></div>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXHUwMDFiWzM3bS0tIFx1MDAxYlsxbUF0dGFjaGluZyBwYWNrYWdlc1x1MDAxYlsyMm0gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRpZHl2ZXJzZSAxLjIuMSAtLVx1MDAxYlszOW1cblx1MDAxYlszN21cdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bWdncGxvdDJcdTAwMWJbMzdtIDIuMi4xLlx1MDAxYlszMW05MDAwXHUwMDFiWzM3bSAgICAgXHUwMDFiWzMybXZcdTAwMWJbMzdtIFx1MDAxYlszNG1wdXJyciAgXHUwMDFiWzM3bSAwLjIuNCAgICAgXG5cdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bXRpYmJsZSBcdTAwMWJbMzdtIDEuNC4yICAgICAgICAgIFx1MDAxYlszMm12XHUwMDFiWzM3bSBcdTAwMWJbMzRtZHBseXIgIFx1MDAxYlszN20gMC43LjQgICAgIFxuXHUwMDFiWzMybXZcdTAwMWJbMzdtIFx1MDAxYlszNG10aWR5ciAgXHUwMDFiWzM3bSAwLjguMCAgICAgICAgICBcdTAwMWJbMzJtdlx1MDAxYlszN20gXHUwMDFiWzM0bXN0cmluZ3JcdTAwMWJbMzdtIDEuMy4wICAgICBcblx1MDAxYlszMm12XHUwMDFiWzM3bSBcdTAwMWJbMzRtcmVhZHIgIFx1MDAxYlszN20gMS4xLjEgICAgICAgICAgXHUwMDFiWzMybXZcdTAwMWJbMzdtIFx1MDAxYlszNG1mb3JjYXRzXHUwMDFiWzM3bSAwLjMuMCAgICAgXHUwMDFiWzM5bVxuXHUwMDFiWzM3bS0tIFx1MDAxYlsxbUNvbmZsaWN0c1x1MDAxYlsyMm0gLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tIHRpZHl2ZXJzZV9jb25mbGljdHMoKSAtLVxuXHUwMDFiWzMxbXhcdTAwMWJbMzdtIFx1MDAxYlszNG1kcGx5clx1MDAxYlszN206Olx1MDAxYlszMm1maWx0ZXIoKVx1MDAxYlszN20gbWFza3MgXHUwMDFiWzM0bXN0YXRzXHUwMDFiWzM3bTo6ZmlsdGVyKClcblx1MDAxYlszMW14XHUwMDFiWzM3bSBcdTAwMWJbMzRtZHBseXJcdTAwMWJbMzdtOjpcdTAwMWJbMzJtbGFnKClcdTAwMWJbMzdtICAgIG1hc2tzIFx1MDAxYlszNG1zdGF0c1x1MDAxYlszN206OmxhZygpXHUwMDFiWzM5bVxuIn0= -->
-<pre><code>[37m-- [1mAttaching packages[22m --------------------------------------- tidyverse 1.2.1 --[39m
-[37m[32mv[37m [34mggplot2[37m 2.2.1.[31m9000[37m     [32mv[37m [34mpurrr  [37m 0.2.4     
-[32mv[37m [34mtibble [37m 1.4.2          [32mv[37m [34mdplyr  [37m 0.7.4     
-[32mv[37m [34mtidyr  [37m 0.8.0          [32mv[37m [34mstringr[37m 1.3.0     
-[32mv[37m [34mreadr  [37m 1.1.1          [32mv[37m [34mforcats[37m 0.3.0     [39m
-[37m-- [1mConflicts[22m ------------------------------------------ tidyverse_conflicts() --
-[31mx[37m [34mdplyr[37m::[32mfilter()[37m masks [34mstats[37m::filter()
-[31mx[37m [34mdplyr[37m::[32mlag()[37m    masks [34mstats[37m::lag()[39m</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShtYWdyaXR0cilcbmBgYCJ9 -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(magrittr)</code></pre></div>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG5BdHRhY2hpbmcgcGFja2FnZTog46S847ixbWFncml0dHLjpLzjuLJcblxuVGhlIGZvbGxvd2luZyBvYmplY3QgaXMgbWFza2VkIGZyb20g46S847ixcGFja2FnZTpwdXJycuOkvOO4sjpcblxuICAgIHNldF9uYW1lc1xuXG5UaGUgZm9sbG93aW5nIG9iamVjdCBpcyBtYXNrZWQgZnJvbSDjpLzjuLFwYWNrYWdlOnRpZHly46S847iyOlxuXG4gICAgZXh0cmFjdFxuIn0= -->
-<pre><code>
-Attaching package: 㤼㸱magrittr㤼㸲
-
-The following object is masked from 㤼㸱package:purrr㤼㸲:
-
-    set_names
-
-The following object is masked from 㤼㸱package:tidyr㤼㸲:
-
-    extract</code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShycGFydClcbmBgYCJ9 -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(rpart)</code></pre></div>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeSh0aWR5dmVyc2UpXG5saWJyYXJ5KG1hZ3JpdHRyKVxubGlicmFyeShycGFydClcbmxpYnJhcnkoYnJvb20pXG5gYGAifQ== -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">library</span>(tidyverse)
+<span class="kw">library</span>(magrittr)
+<span class="kw">library</span>(rpart)
+<span class="kw">library</span>(broom)</code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -345,26 +320,12 @@ The following object is masked from 㤼㸱package:tidyr㤼㸲:
 <h1><span class="header-section-number">2</span> Input</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVzdCA8LSByZWFkX2NzdihoZXJlOjpoZXJlKFwidGl0YW5pY1wiLCBcImRhdGFcIiwgXCJ0ZXN0LmNzdlwiKSklPiVcbiAgc2V0X2NvbG5hbWVzKHN0cl90b19sb3dlcihjb2xuYW1lcyguKSkpICU+JVxuICBtdXRhdGVfaWYoaXMubnVtZXJpYywgZnVuY3Rpb24oeCkgaWZlbHNlKGlzLm5hKHgpLCBtZWFuKHgsIG5hLnJtID0gVFJVRSksIHgpKVxuXG5gYGAifQ== -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">test &lt;-<span class="st"> </span><span class="kw">read_csv</span>(here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;titanic&quot;</span>, <span class="st">&quot;data&quot;</span>, <span class="st">&quot;test.csv&quot;</span>))<span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">set_colnames</span>(<span class="kw">str_to_lower</span>(<span class="kw">colnames</span>(.))) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">mutate_if</span>(is.numeric, <span class="cf">function</span>(x) <span class="kw">ifelse</span>(<span class="kw">is.na</span>(x), <span class="kw">mean</span>(x, <span class="dt">na.rm =</span> <span class="ot">TRUE</span>), x))</code></pre></div>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGl0YW5pYyA8LSBsaXN0KHRyYWluID0gLiwgdGVzdCA9IHRlc3QpICU+JVxuICBiaW5kX3Jvd3MoLmlkID0gXCJ0eXBlXCIpXG5cbmBgYCJ9 -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">titanic &lt;-<span class="st"> </span><span class="kw">list</span>(<span class="dt">train =</span> ., <span class="dt">test =</span> test) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">bind_rows</span>(<span class="dt">.id =</span> <span class="st">&quot;type&quot;</span>)</code></pre></div>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiUGFyc2VkIHdpdGggY29sdW1uIHNwZWNpZmljYXRpb246XG5jb2xzKFxuICBQYXNzZW5nZXJJZCA9IGNvbF9pbnRlZ2VyKCksXG4gIFBjbGFzcyA9IGNvbF9pbnRlZ2VyKCksXG4gIE5hbWUgPSBjb2xfY2hhcmFjdGVyKCksXG4gIFNleCA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgQWdlID0gY29sX2RvdWJsZSgpLFxuICBTaWJTcCA9IGNvbF9pbnRlZ2VyKCksXG4gIFBhcmNoID0gY29sX2ludGVnZXIoKSxcbiAgVGlja2V0ID0gY29sX2NoYXJhY3RlcigpLFxuICBGYXJlID0gY29sX2RvdWJsZSgpLFxuICBDYWJpbiA9IGNvbF9jaGFyYWN0ZXIoKSxcbiAgRW1iYXJrZWQgPSBjb2xfY2hhcmFjdGVyKClcbilcbiJ9 -->
-<pre><code>Parsed with column specification:
-cols(
-  PassengerId = col_integer(),
-  Pclass = col_integer(),
-  Name = col_character(),
-  Sex = col_character(),
-  Age = col_double(),
-  SibSp = col_integer(),
-  Parch = col_integer(),
-  Ticket = col_character(),
-  Fare = col_double(),
-  Cabin = col_character(),
-  Embarked = col_character()
-)</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gZXZhbChsaHMsIHBhcmVudCwgcGFyZW50KSA6IG9iamVjdCAnLicgbm90IGZvdW5kXG4ifQ== -->
+<pre><code>Error in eval(lhs, parent, parent) : object '.' not found</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -373,8 +334,9 @@ cols(
 <h1><span class="header-section-number">3</span> Everyone Dies</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsZGVhZCA8LSB0ZXN0ICU+JVxuICBtdXRhdGUoc3Vydml2ZWQgPSAwKSAlPiVcbiAgc2VsZWN0KHBhc3NlbmdlcmlkLCBzdXJ2aXZlZClcbndyaXRlX2NzdihhbGxkZWFkLCBoZXJlOjpoZXJlKFwidGl0YW5pY1wiLCBcInN1Ym1pc3Npb25zXCIsIFwiMV9hbGxkZWFkLmNzdlwiKSlcbmBgYCJ9 -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alldead &lt;-<span class="st"> </span>test <span class="op">%&gt;%</span>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuYWxsZGVhZCA8LSB0aXRhbmljICU+JVxuICBmaWx0ZXIodHlwZSA9PSBcInRlc3RcIikgJT4lXG4gIG11dGF0ZShzdXJ2aXZlZCA9IDApICU+JVxuICBzZWxlY3QocGFzc2VuZ2VyaWQsIHN1cnZpdmVkKVxud3JpdGVfY3N2KGFsbGRlYWQsIGhlcmU6OmhlcmUoXCJ0aXRhbmljXCIsIFwic3VibWlzc2lvbnNcIiwgXCIxX2FsbGRlYWQuY3N2XCIpKVxuYGBgIn0= -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">alldead &lt;-<span class="st"> </span>titanic <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> &quot;test&quot;</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">mutate</span>(<span class="dt">survived =</span> <span class="dv">0</span>) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">select</span>(passengerid, survived)
 <span class="kw">write_csv</span>(alldead, here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;titanic&quot;</span>, <span class="st">&quot;submissions&quot;</span>, <span class="st">&quot;1_alldead.csv&quot;</span>))</code></pre></div>
@@ -386,9 +348,10 @@ cols(
 <h1><span class="header-section-number">4</span> Women Live</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud29tZW5saXZlIDwtIHRlc3QgJT4lXG4gIG11dGF0ZShzdXJ2aXZlZCA9IGlmZWxzZShTZXggPT0gXCJmZW1hbGVcIiwgMSwgMCkpICU+JVxuICBzZWxlY3QocGFzc2VuZ2VyaWQsIHN1cnZpdmVkKVxud3JpdGVfY3N2KHdvbWVubGl2ZSwgaGVyZTo6aGVyZShcInRpdGFuaWNcIiwgXCJzdWJtaXNzaW9uc1wiLCBcIjJfd29tZW5saXZlLmNzdlwiKSlcbmBgYCJ9 -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">womenlive &lt;-<span class="st"> </span>test <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">survived =</span> <span class="kw">ifelse</span>(Sex <span class="op">==</span><span class="st"> &quot;female&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">%&gt;%</span>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxud29tZW5saXZlIDwtIHRpdGFuaWMgJT4lXG4gIGZpbHRlcih0eXBlID09IFwidGVzdFwiKSAlPiVcbiAgbXV0YXRlKHN1cnZpdmVkID0gaWZlbHNlKHNleCA9PSBcImZlbWFsZVwiLCAxLCAwKSkgJT4lXG4gIHNlbGVjdChwYXNzZW5nZXJpZCwgc3Vydml2ZWQpXG53cml0ZV9jc3Yod29tZW5saXZlLCBoZXJlOjpoZXJlKFwidGl0YW5pY1wiLCBcInN1Ym1pc3Npb25zXCIsIFwiMl93b21lbmxpdmUuY3N2XCIpKVxuYGBgIn0= -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">womenlive &lt;-<span class="st"> </span>titanic <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> &quot;test&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">survived =</span> <span class="kw">ifelse</span>(sex <span class="op">==</span><span class="st"> &quot;female&quot;</span>, <span class="dv">1</span>, <span class="dv">0</span>)) <span class="op">%&gt;%</span>
 <span class="st">  </span><span class="kw">select</span>(passengerid, survived)
 <span class="kw">write_csv</span>(womenlive, here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;titanic&quot;</span>, <span class="st">&quot;submissions&quot;</span>, <span class="st">&quot;2_womenlive.csv&quot;</span>))</code></pre></div>
 <!-- rnb-source-end -->
@@ -399,18 +362,15 @@ cols(
 <h1><span class="header-section-number">5</span> Logistic Regression</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9naXQgPC0gZ2xtKFxuICBmb3JtdWxhID0gc3Vydml2ZWQgfiAuLFxuICBmYW1pbHkgPSBiaW5vbWlhbChsaW5rID0gXCJsb2dpdFwiKSxcbiAgZGF0YSA9IHRyYWluICU+JSBzZWxlY3QoLWNhYmluLCAtcGFzc2VuZ2VyaWQsIC1uYW1lLCAtdGlja2V0KVxuICApXG5sb2dpc3RpYyA8LSBtdXRhdGUodGVzdCwgc3Vydml2ZWQgPSBpZmVsc2UocHJlZGljdChsb2dpdCwgdGVzdCkgPiAwLjUsIDEsIDApKVxud3JpdGVfY3N2KFxuICBsb2dpc3RpYyAlPiUgc2VsZWN0KHBhc3NlbmdlcmlkLCBzdXJ2aXZlZCksXG4gIGhlcmU6OmhlcmUoXCJ0aXRhbmljXCIsIFwic3VibWlzc2lvbnNcIiwgXCIzX2xvZ2l0LmNzdlwiKVxuICApXG5gYGAifQ== -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">logit &lt;-<span class="st"> </span><span class="kw">glm</span>(
-  <span class="dt">formula =</span> survived <span class="op">~</span><span class="st"> </span>.,
-  <span class="dt">family =</span> <span class="kw">binomial</span>(<span class="dt">link =</span> <span class="st">&quot;logit&quot;</span>),
-  <span class="dt">data =</span> train <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>cabin, <span class="op">-</span>passengerid, <span class="op">-</span>name, <span class="op">-</span>ticket)
-  )
-logistic &lt;-<span class="st"> </span><span class="kw">mutate</span>(test, <span class="dt">survived =</span> <span class="kw">ifelse</span>(<span class="kw">predict</span>(logit, test) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>))
-<span class="kw">write_csv</span>(
-  logistic <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(passengerid, survived),
-  here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;titanic&quot;</span>, <span class="st">&quot;submissions&quot;</span>, <span class="st">&quot;3_logit.csv&quot;</span>)
-  )</code></pre></div>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubG9naXN0aWMgPC0gZGF0YSAlPiVcbiAgZmlsdGVyKHR5cGUgPT0gXCJ0ZXN0XCIpICU+JVxuICBtdXRhdGUoc3Vydml2ZWQgPSBpZmVsc2UocHJlZGljdChsb2dpdCwgLikgPiAwLjUsIDEsIDApKVxuXG5gYGAifQ== -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">logistic &lt;-<span class="st"> </span>data <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> &quot;test&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">survived =</span> <span class="kw">ifelse</span>(<span class="kw">predict</span>(logit, .) <span class="op">&gt;</span><span class="st"> </span><span class="fl">0.5</span>, <span class="dv">1</span>, <span class="dv">0</span>))</code></pre></div>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gVXNlTWV0aG9kKFwiZmlsdGVyX1wiKSA6IFxuICBubyBhcHBsaWNhYmxlIG1ldGhvZCBmb3IgJ2ZpbHRlcl8nIGFwcGxpZWQgdG8gYW4gb2JqZWN0IG9mIGNsYXNzIFwiZnVuY3Rpb25cIlxuIn0= -->
+<pre><code>Error in UseMethod(&quot;filter_&quot;) : 
+  no applicable method for 'filter_' applied to an object of class &quot;function&quot;</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -418,16 +378,48 @@ logistic &lt;-<span class="st"> </span><span class="kw">mutate</span>(test, <spa
 <h1><span class="header-section-number">6</span> Decision Tree</h1>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZHRyZWUgPC0gcnBhcnQoXG4gIGZvcm11bGEgPSBzdXJ2aXZlZCB+IC4sXG4gIG1ldGhvZCA9IFwiY2xhc3NcIixcbiAgZGF0YSA9IHRyYWluICU+JSBzZWxlY3QoLWNhYmluLCAtcGFzc2VuZ2VyaWQsIC1uYW1lLCAtdGlja2V0KVxuKVxuZGVjaXNpb24gPC0gbXV0YXRlKHRlc3QsIHN1cnZpdmVkID0gcHJlZGljdChkdHJlZSwgdGVzdCwgdHlwZSA9IFwiY2xhc3NcIikpXG53cml0ZV9jc3YoXG4gIGRlY2lzaW9uICU+JSBzZWxlY3QocGFzc2VuZ2VyaWQsIHN1cnZpdmVkKSxcbiAgaGVyZTo6aGVyZShcInRpdGFuaWNcIiwgXCJzdWJtaXNzaW9uc1wiLCBcIjRfZHRyZWUuY3N2XCIpXG4gIClcbmBgYCJ9 -->
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">dtree &lt;-<span class="st"> </span><span class="kw">rpart</span>(
-  <span class="dt">formula =</span> survived <span class="op">~</span><span class="st"> </span>.,
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGVjaXNpb24gPC0gdGl0YW5pYyAlPiVcbiAgZmlsdGVyKHR5cGUgPT0gXCJ0ZXN0XCIpICU+JVxuICBtdXRhdGUoc3Vydml2ZWQgPSBwcmVkaWN0KGR0cmVlLCAuLCB0eXBlID0gXCJjbGFzc1wiKSlcblxuYGBgIn0= -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">decision &lt;-<span class="st"> </span>titanic <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> &quot;test&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">survived =</span> <span class="kw">predict</span>(dtree, ., <span class="dt">type =</span> <span class="st">&quot;class&quot;</span>))</code></pre></div>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4gbXV0YXRlX2ltcGwoLmRhdGEsIGRvdHMpIDogXG4gIEV2YWx1YXRpb24gZXJyb3I6IG9iamVjdCAnZHRyZWUnIG5vdCBmb3VuZC5cbiJ9 -->
+<pre><code>Error in mutate_impl(.data, dots) : 
+  Evaluation error: object 'dtree' not found.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="feature-engineering" class="section level1">
+<h1><span class="header-section-number">7</span> Feature Engineering</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGl0YW5pYyA8LSB0aXRhbmljICU+JVxuICBtdXRhdGUoXG4gICAgdGl0bGUgPSBzdHJfZXh0cmFjdChuYW1lLCBcIig/PD0sIClbQS16IF0qKD89XFxcXC4gKVwiKSxcbiAgICB0aXRsZSA9IGZjdF9jb2xsYXBzZShcbiAgICAgIC5mID0gZmFjdG9yKHRpdGxlKSxcbiAgICAgIE1ycyA9IGMoXCJNcnNcIiwgXCJNbWVcIiksXG4gICAgICBNaXNzID0gYyhcIk1pc3NcIiwgXCJNbGxlXCIpLFxuICAgICAgU2lyID0gYyhcIkNhcHRcIiwgXCJDb2xcIiwgXCJEb25cIiwgXCJNYWpvclwiLCBcIlNpclwiKSxcbiAgICAgIExhZHkgPSBjKFwiRG9uYVwiLCBcIkxhZHlcIiwgXCJKb25raGVlclwiLCBcInRoZSBDb3VudGVzc1wiKVxuICAgICAgKSxcbiAgICBzdXJuYW1lID0gc3RyX2V4dHJhY3QobmFtZSwgXCJeLiooPz0sKVwiKSxcbiAgICBmYW1pbHlzaXplID0gc2lic3AgKyBwYXJjaFxuICAgIClcbmZ0cmVlIDwtIHJwYXJ0KFxuICBmb3JtdWxhID0gc3Vydml2ZWQgflxuICAgIHBjbGFzcyArIHNleCArIGFnZSArIHNpYnNwICsgcGFyY2ggKyBmYXJlICsgZW1iYXJrZWQgKyB0aXRsZSArIGZhbWlseXNpemUsXG4gIG1ldGhvZCA9IFwiY2xhc3NcIixcbiAgZGF0YSA9IHRpdGFuaWMgJT4lIGZpbHRlcih0eXBlID09IFwidHJhaW5cIilcbilcbmZkZWNpc2lvbiA8LSB0aXRhbmljICU+JVxuICBmaWx0ZXIodHlwZSA9PSBcInRlc3RcIikgJT4lXG4gIG11dGF0ZShzdXJ2aXZlZCA9IHByZWRpY3QoZHRyZWUsIC4sIHR5cGUgPSBcImNsYXNzXCIpKVxud3JpdGVfY3N2KFxuICBmZGVjaXNpb24gJT4lIHNlbGVjdChwYXNzZW5nZXJpZCwgc3Vydml2ZWQpLFxuICBoZXJlOjpoZXJlKFwidGl0YW5pY1wiLCBcInN1Ym1pc3Npb25zXCIsIFwiNV9mdHJlZS5jc3ZcIilcbiAgKVxuYGBgIn0= -->
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">titanic &lt;-<span class="st"> </span>titanic <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(
+    <span class="dt">title =</span> <span class="kw">str_extract</span>(name, <span class="st">&quot;(?&lt;=, )[A-z ]*(?=</span><span class="ch">\\</span><span class="st">. )&quot;</span>),
+    <span class="dt">title =</span> <span class="kw">fct_collapse</span>(
+      <span class="dt">.f =</span> <span class="kw">factor</span>(title),
+      <span class="dt">Mrs =</span> <span class="kw">c</span>(<span class="st">&quot;Mrs&quot;</span>, <span class="st">&quot;Mme&quot;</span>),
+      <span class="dt">Miss =</span> <span class="kw">c</span>(<span class="st">&quot;Miss&quot;</span>, <span class="st">&quot;Mlle&quot;</span>),
+      <span class="dt">Sir =</span> <span class="kw">c</span>(<span class="st">&quot;Capt&quot;</span>, <span class="st">&quot;Col&quot;</span>, <span class="st">&quot;Don&quot;</span>, <span class="st">&quot;Major&quot;</span>, <span class="st">&quot;Sir&quot;</span>),
+      <span class="dt">Lady =</span> <span class="kw">c</span>(<span class="st">&quot;Dona&quot;</span>, <span class="st">&quot;Lady&quot;</span>, <span class="st">&quot;Jonkheer&quot;</span>, <span class="st">&quot;the Countess&quot;</span>)
+      ),
+    <span class="dt">surname =</span> <span class="kw">str_extract</span>(name, <span class="st">&quot;^.*(?=,)&quot;</span>),
+    <span class="dt">familysize =</span> sibsp <span class="op">+</span><span class="st"> </span>parch
+    )
+ftree &lt;-<span class="st"> </span><span class="kw">rpart</span>(
+  <span class="dt">formula =</span> survived <span class="op">~</span>
+<span class="st">    </span>pclass <span class="op">+</span><span class="st"> </span>sex <span class="op">+</span><span class="st"> </span>age <span class="op">+</span><span class="st"> </span>sibsp <span class="op">+</span><span class="st"> </span>parch <span class="op">+</span><span class="st"> </span>fare <span class="op">+</span><span class="st"> </span>embarked <span class="op">+</span><span class="st"> </span>title <span class="op">+</span><span class="st"> </span>familysize,
   <span class="dt">method =</span> <span class="st">&quot;class&quot;</span>,
-  <span class="dt">data =</span> train <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span>cabin, <span class="op">-</span>passengerid, <span class="op">-</span>name, <span class="op">-</span>ticket)
+  <span class="dt">data =</span> titanic <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> &quot;train&quot;</span>)
 )
-decision &lt;-<span class="st"> </span><span class="kw">mutate</span>(test, <span class="dt">survived =</span> <span class="kw">predict</span>(dtree, test, <span class="dt">type =</span> <span class="st">&quot;class&quot;</span>))
+fdecision &lt;-<span class="st"> </span>titanic <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">filter</span>(type <span class="op">==</span><span class="st"> &quot;test&quot;</span>) <span class="op">%&gt;%</span>
+<span class="st">  </span><span class="kw">mutate</span>(<span class="dt">survived =</span> <span class="kw">predict</span>(dtree, ., <span class="dt">type =</span> <span class="st">&quot;class&quot;</span>))
 <span class="kw">write_csv</span>(
-  decision <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(passengerid, survived),
-  here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;titanic&quot;</span>, <span class="st">&quot;submissions&quot;</span>, <span class="st">&quot;4_dtree.csv&quot;</span>)
+  fdecision <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(passengerid, survived),
+  here<span class="op">::</span><span class="kw">here</span>(<span class="st">&quot;titanic&quot;</span>, <span class="st">&quot;submissions&quot;</span>, <span class="st">&quot;5_ftree.csv&quot;</span>)
   )</code></pre></div>
 <!-- rnb-source-end -->
 <!-- rnb-chunk-end -->
@@ -435,7 +427,7 @@ decision &lt;-<span class="st"> </span><span class="kw">mutate</span>(test, <spa
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlRpdGFuaWMiDQphdXRob3I6ICJDYWx1bSBZb3UiDQpkYXRlOiAiMjR0aCBKYW51YXJ5LCAyMDE4Ig0Kb3V0cHV0Og0KICBodG1sX25vdGVib29rOg0KICAgIGhpZ2hsaWdodDogdGFuZ28NCiAgICBtYXRoamF4OiBudWxsDQogICAgbnVtYmVyX3NlY3Rpb25zOiB5ZXMNCiAgICB0aGVtZTogc3BhY2VsYWINCiAgICB0b2M6IHllcw0KICAgIHRvY19mbG9hdDogeWVzDQotLS0NCg0KIyBTZXR1cA0KYGBge3Igc2V0dXB9DQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkobWFncml0dHIpDQpsaWJyYXJ5KHJwYXJ0KQ0KbGlicmFyeShicm9vbSkNCmBgYA0KDQojIElucHV0DQpgYGB7ciBpbnB1dH0NCnRlc3QgPC0gcmVhZF9jc3YoaGVyZTo6aGVyZSgidGl0YW5pYyIsICJkYXRhIiwgInRlc3QuY3N2IikpJT4lDQogIHNldF9jb2xuYW1lcyhzdHJfdG9fbG93ZXIoY29sbmFtZXMoLikpKSAlPiUNCiAgbXV0YXRlX2lmKGlzLm51bWVyaWMsIGZ1bmN0aW9uKHgpIGlmZWxzZShpcy5uYSh4KSwgbWVhbih4LCBuYS5ybSA9IFRSVUUpLCB4KSkNCnRyYWluIDwtIHJlYWRfY3N2KGhlcmU6OmhlcmUoInRpdGFuaWMiLCAiZGF0YSIsICJ0cmFpbi5jc3YiKSkgJT4lDQogIHNldF9jb2xuYW1lcyhzdHJfdG9fbG93ZXIoY29sbmFtZXMoLikpKSAlPiUNCiAgbXV0YXRlX2lmKGlzLm51bWVyaWMsIGZ1bmN0aW9uKHgpIGlmZWxzZShpcy5uYSh4KSwgbWVhbih4LCBuYS5ybSA9IFRSVUUpLCB4KSkNCmBgYA0KIyBFdmVyeW9uZSBEaWVzDQpgYGB7ciBhbGxkZWFkfQ0KYWxsZGVhZCA8LSB0ZXN0ICU+JQ0KICBtdXRhdGUoc3Vydml2ZWQgPSAwKSAlPiUNCiAgc2VsZWN0KHBhc3NlbmdlcmlkLCBzdXJ2aXZlZCkNCndyaXRlX2NzdihhbGxkZWFkLCBoZXJlOjpoZXJlKCJ0aXRhbmljIiwgInN1Ym1pc3Npb25zIiwgIjFfYWxsZGVhZC5jc3YiKSkNCmBgYA0KDQojIFdvbWVuIExpdmUNCmBgYHtyIHdvbWVubGl2ZX0NCndvbWVubGl2ZSA8LSB0ZXN0ICU+JQ0KICBtdXRhdGUoc3Vydml2ZWQgPSBpZmVsc2UoU2V4ID09ICJmZW1hbGUiLCAxLCAwKSkgJT4lDQogIHNlbGVjdChwYXNzZW5nZXJpZCwgc3Vydml2ZWQpDQp3cml0ZV9jc3Yod29tZW5saXZlLCBoZXJlOjpoZXJlKCJ0aXRhbmljIiwgInN1Ym1pc3Npb25zIiwgIjJfd29tZW5saXZlLmNzdiIpKQ0KYGBgDQoNCiMgTG9naXN0aWMgUmVncmVzc2lvbg0KYGBge3J9DQpsb2dpdCA8LSBnbG0oDQogIGZvcm11bGEgPSBzdXJ2aXZlZCB+IC4sDQogIGZhbWlseSA9IGJpbm9taWFsKGxpbmsgPSAibG9naXQiKSwNCiAgZGF0YSA9IHRyYWluICU+JSBzZWxlY3QoLWNhYmluLCAtcGFzc2VuZ2VyaWQsIC1uYW1lLCAtdGlja2V0KQ0KICApDQpsb2dpc3RpYyA8LSBtdXRhdGUodGVzdCwgc3Vydml2ZWQgPSBpZmVsc2UocHJlZGljdChsb2dpdCwgdGVzdCkgPiAwLjUsIDEsIDApKQ0Kd3JpdGVfY3N2KA0KICBsb2dpc3RpYyAlPiUgc2VsZWN0KHBhc3NlbmdlcmlkLCBzdXJ2aXZlZCksDQogIGhlcmU6OmhlcmUoInRpdGFuaWMiLCAic3VibWlzc2lvbnMiLCAiM19sb2dpdC5jc3YiKQ0KICApDQpgYGANCg0KIyBEZWNpc2lvbiBUcmVlDQpgYGB7cn0NCmR0cmVlIDwtIHJwYXJ0KA0KICBmb3JtdWxhID0gc3Vydml2ZWQgfiAuLA0KICBtZXRob2QgPSAiY2xhc3MiLA0KICBkYXRhID0gdHJhaW4gJT4lIHNlbGVjdCgtY2FiaW4sIC1wYXNzZW5nZXJpZCwgLW5hbWUsIC10aWNrZXQpDQopDQpkZWNpc2lvbiA8LSBtdXRhdGUodGVzdCwgc3Vydml2ZWQgPSBwcmVkaWN0KGR0cmVlLCB0ZXN0LCB0eXBlID0gImNsYXNzIikpDQp3cml0ZV9jc3YoDQogIGRlY2lzaW9uICU+JSBzZWxlY3QocGFzc2VuZ2VyaWQsIHN1cnZpdmVkKSwNCiAgaGVyZTo6aGVyZSgidGl0YW5pYyIsICJzdWJtaXNzaW9ucyIsICI0X2R0cmVlLmNzdiIpDQogICkNCmBgYA0KDQo=</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlRpdGFuaWMiDQphdXRob3I6ICJDYWx1bSBZb3UiDQpkYXRlOiAiMjR0aCBKYW51YXJ5LCAyMDE4Ig0Kb3V0cHV0Og0KICBodG1sX25vdGVib29rOg0KICAgIGhpZ2hsaWdodDogdGFuZ28NCiAgICBtYXRoamF4OiBudWxsDQogICAgbnVtYmVyX3NlY3Rpb25zOiB5ZXMNCiAgICB0aGVtZTogc3BhY2VsYWINCiAgICB0b2M6IHllcw0KICAgIHRvY19mbG9hdDogeWVzDQotLS0NCg0KIyBTZXR1cA0KYGBge3Igc2V0dXB9DQpsaWJyYXJ5KHRpZHl2ZXJzZSkNCmxpYnJhcnkobWFncml0dHIpDQpsaWJyYXJ5KHJwYXJ0KQ0KbGlicmFyeShicm9vbSkNCmBgYA0KDQojIElucHV0DQpgYGB7ciBpbnB1dH0NCnRlc3QgPC0gcmVhZF9jc3YoaGVyZTo6aGVyZSgidGl0YW5pYyIsICJkYXRhIiwgInRlc3QuY3N2IikpDQp0cmFpbiA8LSByZWFkX2NzdihoZXJlOjpoZXJlKCJ0aXRhbmljIiwgImRhdGEiLCAidHJhaW4uY3N2IikpDQoNCiMgQ29tYmluZSBkYXRhIGludG8gb25lIGZyYW1lIHRvIGd1YXJhbnRlZSB0aGUgc2FtZSB0cmFuZm9ybWF0aW9ucw0KdGl0YW5pYyA8LSBsaXN0KHRyYWluID0gdHJhaW4sIHRlc3QgPSB0ZXN0KSAlPiUNCiAgYmluZF9yb3dzKC5pZCA9ICJ0eXBlIikgJT4lDQogIHNldF9jb2xuYW1lcyhzdHJfdG9fbG93ZXIoY29sbmFtZXMoLikpKSAlPiUNCiAgbXV0YXRlX2F0KHZhcnMoYWdlLCBmYXJlKSwgfiBpZmVsc2UoaXMubmEoLiksIG1lYW4oLiwgbmEucm0gPSBUUlVFKSwgLikpICU+JQ0KICBtdXRhdGVfYXQodmFycyh0eXBlLCBzZXgsIHBjbGFzcywgZW1iYXJrZWQpLCBmYWMpDQpgYGANCiMgRXZlcnlvbmUgRGllcw0KYGBge3IgYWxsZGVhZH0NCmFsbGRlYWQgPC0gdGl0YW5pYyAlPiUNCiAgZmlsdGVyKHR5cGUgPT0gInRlc3QiKSAlPiUNCiAgbXV0YXRlKHN1cnZpdmVkID0gMCkgJT4lDQogIHNlbGVjdChwYXNzZW5nZXJpZCwgc3Vydml2ZWQpDQp3cml0ZV9jc3YoYWxsZGVhZCwgaGVyZTo6aGVyZSgidGl0YW5pYyIsICJzdWJtaXNzaW9ucyIsICIxX2FsbGRlYWQuY3N2IikpDQpgYGANCg0KIyBXb21lbiBMaXZlDQpgYGB7ciB3b21lbmxpdmV9DQp3b21lbmxpdmUgPC0gdGl0YW5pYyAlPiUNCiAgZmlsdGVyKHR5cGUgPT0gInRlc3QiKSAlPiUNCiAgbXV0YXRlKHN1cnZpdmVkID0gaWZlbHNlKHNleCA9PSAiZmVtYWxlIiwgMSwgMCkpICU+JQ0KICBzZWxlY3QocGFzc2VuZ2VyaWQsIHN1cnZpdmVkKQ0Kd3JpdGVfY3N2KHdvbWVubGl2ZSwgaGVyZTo6aGVyZSgidGl0YW5pYyIsICJzdWJtaXNzaW9ucyIsICIyX3dvbWVubGl2ZS5jc3YiKSkNCmBgYA0KDQojIExvZ2lzdGljIFJlZ3Jlc3Npb24NCmBgYHtyfQ0KbG9naXQgPC0gZ2xtKA0KICBmb3JtdWxhID0gc3Vydml2ZWQgfiBwY2xhc3MgKyBzZXggKyBhZ2UgKyBzaWJzcCArIHBhcmNoICsgZmFyZSArIGVtYmFya2VkLA0KICBmYW1pbHkgPSBiaW5vbWlhbChsaW5rID0gImxvZ2l0IiksDQogIGRhdGEgPSB0aXRhbmljICU+JSBmaWx0ZXIodHlwZSA9PSAidHJhaW4iKQ0KICApDQpsb2dpc3RpYyA8LSB0aXRhbmljICU+JQ0KICBmaWx0ZXIodHlwZSA9PSAidGVzdCIpICU+JQ0KICBtdXRhdGUoc3Vydml2ZWQgPSBpZmVsc2UocHJlZGljdChsb2dpdCwgLikgPiAwLjUsIDEsIDApKQ0Kd3JpdGVfY3N2KA0KICBsb2dpc3RpYyAsDQogIGhlcmU6OmhlcmUoInRpdGFuaWMiLCAic3VibWlzc2lvbnMiLCAiM19sb2dpdC5jc3YiKQ0KICApDQpgYGANCg0KIyBEZWNpc2lvbiBUcmVlDQpgYGB7cn0NCmR0cmVlIDwtIHJwYXJ0KA0KICBmb3JtdWxhID0gc3Vydml2ZWQgfiBwY2xhc3MgKyBzZXggKyBhZ2UgKyBzaWJzcCArIHBhcmNoICsgZmFyZSArIGVtYmFya2VkLA0KICBtZXRob2QgPSAiY2xhc3MiLA0KICBkYXRhID0gdGl0YW5pYyAlPiUgZmlsdGVyKHR5cGUgPT0gInRyYWluIikNCikNCmRlY2lzaW9uIDwtIHRpdGFuaWMgJT4lDQogIGZpbHRlcih0eXBlID09ICJ0ZXN0IikgJT4lDQogIG11dGF0ZShzdXJ2aXZlZCA9IHByZWRpY3QoZHRyZWUsIC4sIHR5cGUgPSAiY2xhc3MiKSkNCndyaXRlX2NzdigNCiAgZGVjaXNpb24gJT4lIHNlbGVjdChwYXNzZW5nZXJpZCwgc3Vydml2ZWQpLA0KICBoZXJlOjpoZXJlKCJ0aXRhbmljIiwgInN1Ym1pc3Npb25zIiwgIjRfZHRyZWUuY3N2IikNCiAgKQ0KYGBgDQoNCiMgRmVhdHVyZSBFbmdpbmVlcmluZw0KYGBge3J9DQp0aXRhbmljIDwtIHRpdGFuaWMgJT4lDQogIG11dGF0ZSgNCiAgICB0aXRsZSA9IHN0cl9leHRyYWN0KG5hbWUsICIoPzw9LCApW0EteiBdKig/PVxcLiApIiksDQogICAgdGl0bGUgPSBmY3RfY29sbGFwc2UoDQogICAgICAuZiA9IGZhY3Rvcih0aXRsZSksDQogICAgICBNcnMgPSBjKCJNcnMiLCAiTW1lIiksDQogICAgICBNaXNzID0gYygiTWlzcyIsICJNbGxlIiksDQogICAgICBTaXIgPSBjKCJDYXB0IiwgIkNvbCIsICJEb24iLCAiTWFqb3IiLCAiU2lyIiksDQogICAgICBMYWR5ID0gYygiRG9uYSIsICJMYWR5IiwgIkpvbmtoZWVyIiwgInRoZSBDb3VudGVzcyIpDQogICAgICApLA0KICAgIHN1cm5hbWUgPSBzdHJfZXh0cmFjdChuYW1lLCAiXi4qKD89LCkiKSwNCiAgICBmYW1pbHlzaXplID0gc2lic3AgKyBwYXJjaA0KICAgICkNCmZ0cmVlIDwtIHJwYXJ0KA0KICBmb3JtdWxhID0gc3Vydml2ZWQgfg0KICAgIHBjbGFzcyArIHNleCArIGFnZSArIHNpYnNwICsgcGFyY2ggKyBmYXJlICsgZW1iYXJrZWQgKyB0aXRsZSArIGZhbWlseXNpemUsDQogIG1ldGhvZCA9ICJjbGFzcyIsDQogIGRhdGEgPSB0aXRhbmljICU+JSBmaWx0ZXIodHlwZSA9PSAidHJhaW4iKQ0KKQ0KZmRlY2lzaW9uIDwtIHRpdGFuaWMgJT4lDQogIGZpbHRlcih0eXBlID09ICJ0ZXN0IikgJT4lDQogIG11dGF0ZShzdXJ2aXZlZCA9IHByZWRpY3QoZnRyZWUsIC4sIHR5cGUgPSAiY2xhc3MiKSkNCndyaXRlX2NzdigNCiAgZmRlY2lzaW9uICU+JSBzZWxlY3QocGFzc2VuZ2VyaWQsIHN1cnZpdmVkKSwNCiAgaGVyZTo6aGVyZSgidGl0YW5pYyIsICJzdWJtaXNzaW9ucyIsICI1X2Z0cmVlLmNzdiIpDQogICkNCmBgYA0KDQo=</div>
 
 
 </div>
