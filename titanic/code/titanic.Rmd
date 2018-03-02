@@ -18,6 +18,7 @@ library(tidyverse)
 library(magrittr)
 library(rpart)
 library(broom)
+library(randomForest)
 ```
 
 # Input
@@ -109,6 +110,29 @@ fdecision <- titanic %>%
 write_csv(
   fdecision %>% select(passengerid, survived),
   here::here("titanic", "submissions", "5_ftree.csv")
+  )
+```
+
+```{r}
+train_t <- titanic %>%
+  filter(type == "train") %>%
+  mutate_if(is.character, ~ factor(.)) %>%
+  na.exclude()
+forest <- randomForest(
+  formula = as.factor(survived) ~
+    pclass + sex + age + sibsp + parch + fare + embarked + title + familysize,
+  data = train_t,
+  importance = TRUE,
+  ntree = 2000
+)
+varImpPlot(forest)
+rforest <- titanic %>%
+  filter(type == "test") %>%
+  mutate_if(is.character, ~ factor(.)) %>%
+  mutate(survived = predict(forest, .))
+write_csv(
+  rforest %>% select(passengerid, survived),
+  here::here("titanic", "submissions", "6_rforest.csv")
   )
 ```
 
