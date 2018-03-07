@@ -31,7 +31,7 @@ titanic <- list(train = train, test = test) %>%
   bind_rows(.id = "type") %>%
   set_colnames(str_to_lower(colnames(.))) %>%
   mutate_at(vars(age, fare), ~ ifelse(is.na(.), mean(., na.rm = TRUE), .)) %>%
-  mutate_at(vars(type, sex, pclass, embarked), fac)
+  mutate_at(vars(type, sex, pclass, embarked), factor)
 ```
 # Everyone Dies
 ```{r alldead}
@@ -52,7 +52,7 @@ write_csv(womenlive, here::here("titanic", "submissions", "2_womenlive.csv"))
 ```
 
 # Logistic Regression
-```{r}
+```{r logit}
 logit <- glm(
   formula = survived ~ pclass + sex + age + sibsp + parch + fare + embarked,
   family = binomial(link = "logit"),
@@ -68,7 +68,7 @@ write_csv(
 ```
 
 # Decision Tree
-```{r}
+```{r dtree}
 dtree <- rpart(
   formula = survived ~ pclass + sex + age + sibsp + parch + fare + embarked,
   method = "class",
@@ -84,7 +84,7 @@ write_csv(
 ```
 
 # Feature Engineering
-```{r}
+```{r ftree}
 titanic <- titanic %>%
   mutate(
     title = str_extract(name, "(?<=, )[A-z ]*(?=\\. )"),
@@ -113,7 +113,9 @@ write_csv(
   )
 ```
 
-```{r}
+# Random Forest
+
+```{r forest}
 train_t <- titanic %>%
   filter(type == "train") %>%
   mutate_if(is.character, ~ factor(.)) %>%
